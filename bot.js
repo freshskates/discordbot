@@ -7,7 +7,7 @@ const personalToken = "";
 
 fetch("https://lichess.org/api/account", {
   headers: {
-    Authorization: "Bearer " + "zBrylyUgcs3avSQ1",
+    Authorization: "Bearer " + process.env.CHESSTOKEN,
   },
 })
   .then(res => res.json())
