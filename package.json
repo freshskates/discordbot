@@ -9,8 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1"
+    "discord.js-commando": "git+https://github.com/discordjs/commando.git",
+    "dotenv": "^8.2.0"
   }
 }

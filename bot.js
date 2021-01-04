@@ -1,17 +1,20 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
-const fetch = require("node-fetch");
+const path = require("path");
+const Commando = require("discord.js-commando");
 require("dotenv").config();
 
-client.on("ready", () => {
+const client = new Commando.CommandoClient({
+  owner: "184858490634895360",
+  commandPrefix: "!",
+});
+client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
-});
 
-client.on("message", msg => {
-  if (msg.channel.id == "795130801926438953" && msg.content === "ping") {
-    // msg.reply("pong");
-    msg.channel.send("pong");
-  }
+  client.registry
+    .registerGroups([
+      ["misc", "misc commands"],
+      ["moderation", "moderation commands"],
+    ])
+    .registerDefaults()
+    .registerCommandsIn(path.join(__dirname, "cmds"));
 });
-
 client.login(process.env.BOTTOKEN);
