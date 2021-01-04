@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fetch = require("node-fetch");
-
+require("dotenv").config();
 /* Create your personal token on https://lichess.org/account/oauth/token */
 const personalToken = "";
 
@@ -24,4 +24,4 @@ client.on("message", msg => {
   }
 });
 
-client.login("Nzk1MTIzODU3ODIzODkxNDc2.X_EyzA.oryy6RmiqpLGSThYBV2jHRXblSQ");
+client.login(process.env.BOTTOKEN);
